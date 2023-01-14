@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a36ec127-2f11-4134-8cff-a810d1f070c2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from pembeli]]>
+	</queryString>
+	<field name="id_pembeli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pembeli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat_pembeli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="76e1fe76-ab42-4925-b4f4-8c12fb6e41ba" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#D4BDD4"/>
+				<staticText>
+					<reportElement uuid="2921655c-037d-429b-854d-7e2d8b06aad3" x="121" y="20" width="414" height="43" forecolor="#000000"/>
+					<textElement>
+						<font fontName="Times New Roman" size="25" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LAPORAN DATA PEMBELI]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="25976a03-0289-49e2-844e-64ffe6914989" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="5560cc10-eed3-4333-b042-162b463fa470" mode="Opaque" x="0" y="0" width="75" height="20" forecolor="#000000" backcolor="#FFCCFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Pembeli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0242cb1d-0cae-43c0-b54d-b35ec9195ff2" mode="Opaque" x="75" y="0" width="245" height="20" forecolor="#000000" backcolor="#FFCCFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pembeli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="333d8ca3-04c8-47c5-b30c-53bd0b22f082" mode="Opaque" x="320" y="0" width="235" height="20" forecolor="#000000" backcolor="#FFCCFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alamat Pembeli]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="211ae315-1da0-41bc-93f7-75a17e4660df" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="4b54b06c-727c-4625-a805-7cbb47f8ed0c" x="0" y="0" width="75" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3c440e32-4dd7-4919-9dd4-8e271bf558fd" x="75" y="0" width="245" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="7bfc8c04-406f-450c-bd93-6ea5b8727c09" x="320" y="0" width="235" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alamat_pembeli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="4b15e6d7-1813-4143-8341-a1dff165eb18" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="6da9040c-ebcf-4727-abbe-eaee5c9c346c" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="d8a1d2da-a8e1-4014-a938-6951de963d76" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
